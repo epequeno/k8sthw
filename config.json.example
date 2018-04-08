@@ -1,0 +1,1 @@
+{"name_modifier": "my-k8s-instances", "key_name": "my_ssh_key_name", "ami_id": "ami-b81dbfc5", "security_groups": ["sg-xxxxxx"], "subnet_id": "subnet-xxxxxx"}

@@ -18,12 +18,6 @@ with open('config.json') as fd:
 
 user_data = """\
 #!/bin/bash
-echo "10.0.0.245 etcd1" >> /etc/hosts
-echo "10.0.0.246 etcd2" >> /etc/hosts
-echo "10.0.0.137 controller1" >> /etc/hosts
-echo "10.0.0.138 controller2" >> /etc/hosts
-echo "10.0.0.181 worker1" >> /etc/hosts
-echo "10.0.0.182 worker2" >> /etc/hosts
 """
 
 instances = {'etcd1': '10.0.0.245',
@@ -32,6 +26,9 @@ instances = {'etcd1': '10.0.0.245',
              'controller2': '10.0.0.138',
              'worker1': '10.0.0.181',
              'worker2': '10.0.0.182'}
+
+for key, val in instances.items():
+  user_data += f'echo "{val} {key}" >> /etc/hosts\n'
 
 results = []
 
